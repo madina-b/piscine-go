@@ -1,9 +1,14 @@
 package main
 
-import "fmt"
+import "github.com/01-edu/z01"
 
 func main() {
-	fmt.Println("abcdefghijklmnopqrstuvwxyz")
+
+	for i := 97; i <= 122; i++ {
+
+		z01.PrintRune(i)
+
+	}
 
 }
 
