@@ -4,7 +4,7 @@ import "github.com/01-edu/z01"
 
 func main() {
 
-	for i := 97; i <= 122; i++ {
+	for i := a; i <= z; i++ {
 
 		z01.PrintRune(i)
 
