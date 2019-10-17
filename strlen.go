@@ -1,9 +1,10 @@
 package piscine
 
 func StrLen(str string) int {
-	for i, _ := range str {
-
+	counter = 0
+	for i := range str {
+		counter = i
 	}
-	return i + 1
+	return counter + 1
 
 }
