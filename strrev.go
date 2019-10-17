@@ -6,11 +6,11 @@ func StrRev(s string) string {
 	for i := range runes {
 		counter = i
 	}
-	StrLen = counter + 1
+	StrLen := counter + 1
 
 	for i := StrLen - 1; i >= 0; i-- {
-		var1 = runes[i]
-		var2 = runes[StrLen-1-i]
+		var1 := runes[i]
+		var2 := runes[StrLen-1-i]
 		runes[i] = var2
 		runes[StrLen-1-i] = var1
 	}
