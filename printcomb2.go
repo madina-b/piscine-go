@@ -8,7 +8,15 @@ func PrintComb2() {
 			z01.PrintRune(i)
 			z01.PrintRune(j)
 			z01.PrintRune(44)
-			z01.PrintRune(32)
+
+			for k := '0'; k < '9'; k++ {
+				for l := '0'; l < '9'; l++ {
+					z01.PrintRune(k)
+					z01.PrintRune(l)
+					z01.PrintRune(44)
+					z01.PrintRune(32)
+				}
+			}
 		}
 	}
 }
