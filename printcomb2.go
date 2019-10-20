@@ -7,13 +7,15 @@ func PrintComb2() {
 		for j := '0'; j < '8'; j++ {
 			for k := '0'; k < '9'; k++ {
 				for l := '1'; l < '9'; l++ {
-					z01.PrintRune(i)
-					z01.PrintRune(j)
-					z01.PrintRune(32)
-					z01.PrintRune(k)
-					z01.PrintRune(l)
-					z01.PrintRune(44)
-					z01.PrintRune(32)
+					if i != k && j != l {
+						z01.PrintRune(i)
+						z01.PrintRune(j)
+						z01.PrintRune(32)
+						z01.PrintRune(k)
+						z01.PrintRune(l)
+						z01.PrintRune(44)
+						z01.PrintRune(32)
+					}
 				}
 			}
 		}
