@@ -1,6 +1,6 @@
 package piscine
 
-func IsPrime(nb int) bool {
+func IsPrimeLocal(nb int) bool {
 	if nb > 0 {
 		for i := 2; i <= nb; i++ {
 			if i < nb && nb%i == 0 {
@@ -16,7 +16,7 @@ func IsPrime(nb int) bool {
 
 func FindNextPrime(nb int) int {
 	for i := nb; i <= 2*nb; i++ {
-		if IsPrime(i) {
+		if IsPrimeLocal(i) {
 			return i
 		}
 	}
