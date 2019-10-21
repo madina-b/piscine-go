@@ -1,11 +1,11 @@
 package piscine
 
 func IterativeFactorial(nb int) int {
-	var a int
+	a:=1
 	if nb == 0 || nb == 1 {
 		a = 1
-	} else if nb > 0 {
-		for i := 1; i <= 15; i++ {
+	} else if nb > 0 && nb<20 {
+		for i := 1; i <= nb; i++ {
 			a = a * i
 		}
 
