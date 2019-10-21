@@ -11,7 +11,7 @@ func Sqrt(nb int) int {
 			c := i * i
 			if c == nb {
 				return i
-			} else {
+			} else if c > nb {
 				return 0
 			}
 
