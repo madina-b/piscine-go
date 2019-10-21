@@ -1,7 +1,7 @@
 package piscine
 
 func FindNextPrime(nb int) int {
-	var primes [2 * nb]int
+	primes := make([]int, 2*nb)
 	for i := range primes {
 		primes[i] = 0
 	}
