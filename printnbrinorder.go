@@ -9,10 +9,9 @@ func PrintNbrInOrder(nb int) {
 			remainder := i % 10
 			digit[remainder] = digit[remainder] + 1
 		}
-		for i := 0; i < 10; i++ {
+		for i := '0'; i <= '9'; i++ {
 			for j := 0; j < digit[i]; j++ {
-				a := rune(i)
-				z01.PrintRune(a)
+				z01.PrintRune(i)
 			}
 		}
 	}
