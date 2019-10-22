@@ -1,7 +1,7 @@
 package piscine
 
 func AlphaCount(str string) int {
-	length:=0
+	length := 0
 	runes := []rune(str)
 	for j := range runes {
 		length = j
