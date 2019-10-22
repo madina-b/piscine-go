@@ -10,7 +10,7 @@ func PrintNbrInOrder(nb int) {
 			digit[remainder] = digit[remainder] + 1
 		}
 		for i := 48; i <= 57; i++ {
-			for j := 0; j < digit[48-i]; j++ {
+			for j := 0; j < digit[i-48]; j++ {
 				z01.PrintRune(rune(i))
 			}
 		}
