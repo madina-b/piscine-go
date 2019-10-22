@@ -3,7 +3,7 @@ package piscine
 import "github.com/01-edu/z01"
 
 func PrintNbrInOrder(nb int) {
-	if nb >= 0 {
+	if nb > 0 {
 		digit := []int{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 		for i := nb; i > 0; i = i / 10 {
 			remainder := i % 10
@@ -14,5 +14,7 @@ func PrintNbrInOrder(nb int) {
 				z01.PrintRune(rune(i))
 			}
 		}
+	} else if nb == 0 {
+		z01.PrintRune(48)
 	}
 }
