@@ -2,7 +2,9 @@ package piscine
 
 func AlphaCount(str string) int {
 	runes := []rune(str)
-	length := len(runes)
+	for _, letter := range runes {
+		length := length + 1
+	}
 	count := 0
 	for i := 0; i < length; i++ {
 		if runes[i] >= 65 && runes[i] <= 90 {
