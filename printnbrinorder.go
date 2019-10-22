@@ -1,5 +1,7 @@
 package piscine
 
+import "github.com/01-edu/z01"
+
 func PrintNbrInOrder(nb int) {
 	if nb > 0 {
 		digit := []int{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
@@ -9,7 +11,7 @@ func PrintNbrInOrder(nb int) {
 		}
 		for i := 0; i < 10; i++ {
 			for j := 0; j < digit[i]; j++ {
-				fmt.Print(i)
+				z01.PrintRune('i')
 			}
 		}
 	}
