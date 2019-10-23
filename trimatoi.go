@@ -1,4 +1,4 @@
-package main
+package piscine
 
 func TrimAtoi(str string) int {
 	LetterRunes := []rune(str)
