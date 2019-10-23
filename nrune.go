@@ -6,9 +6,9 @@ func NRune(s string, n int) rune {
 	for i := range Runes {
 		length = i + 1
 	}
-	if n <= length {
+	if n <= length && n > 0 {
 		return Runes[n-1]
 	} else {
-		return 32
+		return rune(0)
 	}
 }
