@@ -1,6 +1,6 @@
 package piscine
 
-func NRune(s string) rune {
+func LastRune(s string) rune {
 	length := 0
 	Runes := []rune(s)
 	for i := range Runes {
