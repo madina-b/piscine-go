@@ -3,8 +3,14 @@ package piscine
 func Index(s string, toFind string) int {
 	runeS := []rune(s)
 	runeF := []rune(toFind)
-	lenS := len(runeS)
-	lenF := len(runeF)
+	lenS := 0
+	lenF := 0
+	for i := range runeS {
+		lenS = i + 1
+	}
+	for j := range runeF {
+		lenF = j + 1
+	}
 
 	for i := 0; i < lenS-lenF+1; i++ {
 		ind := i
