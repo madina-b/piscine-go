@@ -16,6 +16,10 @@ func Capitalize(s string) string {
 				runeS[i] = curRune - 32
 				start = true
 			}
+		} else if curRune >= '0' && curRune <= '9' {
+			if !start {
+				start = true
+			}
 		} else {
 			start = false
 		}
