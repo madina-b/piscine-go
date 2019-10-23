@@ -11,6 +11,9 @@ func Index(s string, toFind string) int {
 	for j := range runeF {
 		lenF = j + 1
 	}
+	if lenF == 0 {
+		return 0
+	}
 
 	for i := 0; i < lenS-lenF+1; i++ {
 		ind := i
