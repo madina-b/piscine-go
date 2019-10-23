@@ -1,4 +1,4 @@
-package piscine
+package main
 
 import (
 	"github.com/01-edu/z01"
@@ -10,4 +10,5 @@ func main() {
 	for _, letter := range arguments[0] {
 		z01.PrintRune(letter)
 	}
+	z01.PrintRune('\n')
 }
