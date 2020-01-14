@@ -3,13 +3,12 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/01-edu/z01"
 )
 
-// func main() {
+func main() {
 
 	arguments := os.Args
 	lenArgs := 0
@@ -25,35 +24,66 @@ import (
 	if lenArgs != 4 {
 		return
 	}
-	value1 := Atoi(arguments[1])
-	value2 := Atoi(arguments[3])
 
-	// upperBound := 9223372036854775807
-	// lowerBound := -9223372036854775807
+	var value1 int64
+	var value2 int64
+	if IsValid(arguments[1]) && IsValid(arguments[3]) {
+		value1 = Atoi(arguments[1])
+		value2 = Atoi(arguments[3])
+	} else {
+		z01.PrintRune('0')
+		return
+	}
+
+	var upperBound int64
+	upperBound = 9223372036854775807
+	var lowerBound int64
+	lowerBound = -9223372036854775807
 
 	//condition if it is not int
-	// if value1 > upperBound || value1 < lowerBound {
-	// 	EndResult = 0
+	if value1 > upperBound || value1 < lowerBound {
+		z01.PrintRune('0')
+		return
 
-	// } else if value2 > upperBound || value2 < lowerBound {
-	// 	EndResult = 0
+	} else if value2 > upperBound || value2 < lowerBound {
+		z01.PrintRune('0')
+		return
 
-	// } else
+	}
+
+	//case1 - "+" addition
 	if arguments[2] == "+" {
 		EndResult = value1 + value2
+
+		if value1 > 0 && value2 > 0 && EndResult < 0 {
+			z01.PrintRune('0')
+			return
+		}
+		if value1 < 0 && value2 < 0 && EndResult > 0 {
+			z01.PrintRune('0')
+			return
+		}
 		if value1 != EndResult-value2 {
 			z01.PrintRune('0')
 			return
 		}
+
+		//case2 - "-" subtraction
 	} else if arguments[2] == "-" {
 		EndResult = value1 - value2
-		fmt.Println(value1)
-		fmt.Println(EndResult + value2)
-
-		if value1 != EndResult+value2 {
+		if value1 < 0 && value2 > 0 && EndResult > 0 {
+			z01.PrintRune('0')
+			return
+		} else if value1 > 0 && value2 < 0 && EndResult < 0 {
 			z01.PrintRune('0')
 			return
 		}
+		if value2 != EndResult-value1 {
+			z01.PrintRune('0')
+			return
+		}
+
+		//case3 - "/" division
 	} else if arguments[2] == "/" {
 		if value2 == 0 {
 			for i := range errorRune1 {
@@ -62,12 +92,8 @@ import (
 			return
 		}
 		EndResult = value1 / value2
-		fmt.Println(value2)
-		fmt.Println(value1 / EndResult)
-		if value2 != value1/EndResult {
-			z01.PrintRune('0')
-			return
-		}
+
+		//case4 - "%" modulo
 	} else if arguments[2] == "%" {
 		if value2 == 0 {
 			for i := range errorRune2 {
@@ -76,14 +102,35 @@ import (
 			return
 		}
 		EndResult = value1 % value2
+
+		//case5 - "*" multiplication
 	} else if arguments[2] == "*" {
+		if value1 == 0 || value2 == 0 {
+			z01.PrintRune('0')
+			return
+		}
 		EndResult = value1 * value2
-		fmt.Println(value1)
-		fmt.Println(EndResult / value2)
+		if value1 > 0 && value2 > 0 && EndResult < 0 {
+			z01.PrintRune('0')
+			return
+		}
+		if value1 < 0 && value2 < 0 && EndResult < 0 {
+			z01.PrintRune('0')
+			return
+		}
+		if value1 > 0 && value2 < 0 && EndResult > 0 {
+			z01.PrintRune('0')
+			return
+		}
+		if value1 < 0 && value2 > 0 && EndResult > 0 {
+			z01.PrintRune('0')
+			return
+		}
 		if value1 != EndResult/value2 {
 			z01.PrintRune('0')
 			return
 		}
+
 	} else {
 		z01.PrintRune('0')
 		return
@@ -94,6 +141,16 @@ import (
 		z01.PrintRune(answer[i])
 	}
 
+}
+
+func IsValid(input string) bool {
+	inputRune := []rune(input)
+	for i := range inputRune {
+		if inputRune[i] < '0' || inputRune[i] > '9' {
+			return false
+		}
+	}
+	return true
 }
 
 func Atoi(str string) int64 {
