@@ -1,19 +1,17 @@
-package main
-
-//func main() {
-// arguments:=os.Args
-//	fmt.Println(RecursivePower(2, 5))
-//}
+package piscine
 
 func RecursivePower(nb int, power int) int {
-	if power > 1 {
-		return nb * RecursivePower(nb, power-1)
-	} else if power == 1 {
-		return nb
+	a := 1
+	if power < 0 || power > 32 {
+		return 0
+	} else if nb == 1 {
+		return 1
 	} else if power == 0 {
 		return 1
+	} else if power == 1 {
+		return nb
 	} else {
-		return 0
+		return nb * RecursivePower(nb, power-1)
 	}
-
+	return a
 }
